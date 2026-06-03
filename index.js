@@ -17,7 +17,9 @@ if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true })
 }
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://file-upload-ui-pbfw.vercel.app'
+}))
 app.use(express.json())
 
 export const db = dbConnect()
