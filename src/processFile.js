@@ -28,7 +28,7 @@ export const processFile = async (
       ]);
 
       if (batch.length >= 1000) {
-        await insertBatch(batch);
+        // await insertBatch(batch);
 
         processedRows += batch.length;
 
@@ -49,7 +49,7 @@ export const processFile = async (
   stream.on("end", async () => {
     try {
       if (batch.length > 0) {
-        await insertBatch(batch);
+        // await insertBatch(batch);
 
         processedRows += batch.length;
       }
